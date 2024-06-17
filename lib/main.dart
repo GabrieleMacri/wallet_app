@@ -14,10 +14,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: HomeScreen(),
       theme: ThemeData(
-        highContrastTheme: HighContrastThemeData(),
         textTheme: TextTheme(
           bodyText1: TextStyle(fontSize: 16.0, color: Colors.black),
         ),
+        useMaterial3: true, // Updated to use Material 3 if needed
       ),
     );
   }
