@@ -54,7 +54,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
               navBarIcons[index],
               size: 30,
               color: Colors.white,
-              // Error: No accessible label for the icon
+              semanticLabel: 'Scan QR code',
             ),
           )
               : GestureDetector(
@@ -68,13 +68,30 @@ class _NavBarWidgetState extends State<NavBarWidget> {
               size: 30,
               color: (index == selectedItem)
                   ? Colors.white
-                  : Colors.blueGrey.shade200,
-              // Error: Insufficient color contrast for unselected icons
+                  : Colors.blue.shade800,
+              semanticLabel: iconLabel(navBarIcons[index]),
             ),
           ),
         ),
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       ),
     );
+  }
+  
+  String iconLabel(IconData icon) {
+    switch (icon) {
+      case Icons.account_balance_wallet_outlined:
+        return 'Wallet';
+      case Icons.library_books_outlined:
+        return 'Library';
+      case Icons.qr_code_scanner_outlined:
+        return 'Scan QR code';
+      case Icons.contacts_outlined:
+        return 'Contacts';
+      case Icons.person_remove_outlined:
+        return 'Remove Person';
+      default:
+        return 'Icon';
+    }
   }
 }
