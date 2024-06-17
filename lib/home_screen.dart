@@ -19,10 +19,12 @@ class HomeScreen extends StatelessWidget {
           children: [
             CircleAvatar(
               backgroundColor: Colors.grey,
-              child: Image.network('https://via.placeholder.com/150'), // Provided a placeholder image
-              foregroundDecoration: BoxDecoration(
-                color: Colors.black.withOpacity(0.6),
-              ), // Added background color for better contrast
+              child: Image.network(
+                'https://via.placeholder.com/150',
+                fit: BoxFit.cover,
+                width: 40, // Provided a fixed size for the image
+                height: 40,
+              ), // Provided a placeholder image
             ),
             SizedBox(width: 10),
             Text(
@@ -64,6 +66,7 @@ class HomeScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
                           'Balance',
@@ -81,7 +84,6 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ),
                       ],
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     ),
                     SizedBox(height: 10),
                     Row(
@@ -172,6 +174,7 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Container(
                           child: Row(
@@ -226,7 +229,6 @@ class HomeScreen extends StatelessWidget {
                               horizontal: 20, vertical: 10),
                         ),
                       ],
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     ),
                   ],
                 ),
@@ -253,6 +255,7 @@ class HomeScreen extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
+                        color: Colors.black, // Updated to higher contrast color
                       ),
                     ),
                   ],
