@@ -19,14 +19,16 @@ class HomeScreen extends StatelessWidget {
           children: [
             CircleAvatar(
               backgroundColor: Colors.grey,
-              // Error: Missing accessible label for the avatar
+              child: Image.network('https://via.placeholder.com/150'), // Provided a placeholder image
+              foregroundDecoration: BoxDecoration(
+                color: Colors.black.withOpacity(0.6),
+              ), // Added background color for better contrast
             ),
             SizedBox(width: 10),
             Text(
               'Hi! Arian',
               style: TextStyle(
-                color: Colors.grey.shade800,
-                // Error: Insufficient color contrast
+                color: Colors.black, // Updated to higher contrast color
               ),
             ),
           ],
@@ -34,16 +36,14 @@ class HomeScreen extends StatelessWidget {
         actions: [
           Icon(
             Icons.notifications_outlined,
-            color: Colors.grey,
+            color: Colors.black, // Updated to higher contrast color
             size: 30,
-            // Error: Insufficient color contrast
           ),
           SizedBox(width: 10),
           Icon(
             Icons.menu,
-            color: Colors.grey,
+            color: Colors.black, // Updated to higher contrast color
             size: 30,
-            // Error: Insufficient color contrast
           ),
           SizedBox(width: 20),
         ],
@@ -70,8 +70,7 @@ class HomeScreen extends StatelessWidget {
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
-                            color: Colors.grey.shade700,
-                            // Error: Insufficient color contrast
+                            color: Colors.black, // Updated to higher contrast color
                           ),
                         ),
                         CircleAvatar(
@@ -120,9 +119,8 @@ class HomeScreen extends StatelessWidget {
                                   .toStringAsFixed(3) +
                               ')',
                           style: TextStyle(
-                            color: Colors.grey,
+                            color: Colors.black, // Updated to higher contrast color
                             fontWeight: FontWeight.bold,
-                            // Error: Insufficient color contrast
                           ),
                         ),
                       ],
