@@ -25,10 +25,12 @@ class AccountWidget extends StatelessWidget {
             progressColor: ConstantsColors.greenColor,
             backgroundWidth: 1.7,
             lineWidth: 5.5,
-            center: Icon(
-              Icons.attach_money,
-              color: ConstantsColors.greenColor,
-              // Error: No semantic label for icon
+            center: Semantics(
+              label: 'Account balance icon',
+              child: Icon(
+                Icons.attach_money,
+                color: ConstantsColors.greenColor,
+              ),
             ),
           ),
           SizedBox(height: 15),
@@ -37,17 +39,15 @@ class AccountWidget extends StatelessWidget {
             style: TextStyle(
               fontSize: 25,
               fontWeight: FontWeight.bold,
-              // Error: Insufficient color contrast
-              color: Colors.grey.shade400,
+              color: Colors.black, // Increased contrast
             ),
           ),
           SizedBox(height: 5),
           Text(
             name.toUpperCase(),
             style: TextStyle(
-              color: Colors.grey,
+              color: Colors.black, // Increased contrast
               fontWeight: FontWeight.bold,
-              // Error: Insufficient color contrast
             ),
           ),
         ],
@@ -57,11 +57,10 @@ class AccountWidget extends StatelessWidget {
         color: Colors.white,
         boxShadow: [
           BoxShadow(
-            color: Colors.blueGrey.shade200,
+            color: Colors.black38, // Ensuring visibility in high contrast mode
             offset: Offset(5, 8),
             blurRadius: 15,
             spreadRadius: 0,
-            // Error: No consideration for high contrast mode
           ),
         ],
         borderRadius: BorderRadius.circular(30),
